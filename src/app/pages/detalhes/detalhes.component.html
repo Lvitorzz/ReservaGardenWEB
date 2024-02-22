@@ -1,0 +1,50 @@
+<div>
+    <h1>Detalhes Produto</h1>
+</div>
+
+<div *ngIf="produto">
+    <form>
+        <div class="input-box">
+            <label>Nome:</label>
+            <input type="text" value="{{produto.nome}}" disabled>
+        </div>
+        <div class="input-box">
+            <label>Descrição:</label>
+            <input type="text" value="{{produto.descricao}}" disabled>
+        </div>
+        <div class="input-box">
+            <label>Link:</label>
+            <input type="text" value="{{produto.link}}" disabled>
+        </div>
+        <div class="input-box">
+            <label>UrlImagem:</label>
+            <input type="text" value="{{produto.urlImagem}}" disabled>
+        </div>
+        <div class="input-box">
+            <label>Ativo:</label >
+            <input type="text" value="{{produto.ativo == true ? 'Ativo' : 'Inativo'}}" disabled>
+        </div>
+        <div class="input-box">
+            <label>Preço:</label>
+            <input type="text" value="{{produto.preco}}" disabled>
+        </div>
+        <div class="input-box">
+            <label>Categoria:</label>
+            <input type="text" value="{{produto.categoria}}" disabled>
+        </div>
+        <div class="input-box">
+            <label>Data de criação:</label>
+            <input type="text" value="{{produto.dataDeCriacao}}" disabled>
+        </div>
+        <div class="input-box">
+            <label>Data de alteração:</label>
+            <input type="text" value="{{produto.dataDeAlteracao}}" disabled>
+        </div>
+
+        <div class="btn-box">
+            <button (click)="InativaProduto()">Inativar Produto</button>
+            <button routerLink="/home">Voltar</button>
+        </div>
+
+    </form>
+</div>

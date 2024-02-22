@@ -1,0 +1,25 @@
+<div class="box-txt">
+    <img src="assets/images/logoacaraje.png" alt="Logo AcarajeTech" class="logo">
+</div>
+<div class="box-form">
+    <h1>Entre na sua conta!</h1>
+    <form [formGroup]="adminForm" (ngSubmit)="AutenticarUsuario()" #formDit="ngForm" class="login-form">
+        <div class="input-box">
+            <label for="NomeUsuario">Nome:</label>
+            <input type="text" formControlName="NomeUsuario" id="NomeUsuario" placeholder="Digite seu nome de usuário" required>
+        </div>
+    
+        <div class="input-box">
+            <label for="Senha">Senha:</label>
+            <input type="password" formControlName="Senha" id="Senha" placeholder="Digite sua senha" required>
+        </div>
+        <div *ngIf="mensagemErro" class="mensagem-erro">
+            {{ mensagemErro }}
+        </div>
+        <div class="btn-box">
+            <button class="btn-input" type="submit">Entrar</button>
+        </div>
+    </form>
+    <h6>Dificuldades para realizar login? <a href="">Contate nosso suporte clicando aqui!</a></h6>
+</div>
+

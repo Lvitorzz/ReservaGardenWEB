@@ -1,0 +1,53 @@
+
+<h1>{{btnTitulo}}</h1>
+
+<form [formGroup]="produtoForm" (ngSubmit)="submit()" #formDit="ngForm">
+    <input type="hidden" formControlName="id">
+    
+    <div class="input-box">
+        <label for="">Nome:</label>
+        <input type="text" formControlName="nome" placeholder="Insira o nome do produto!" required>
+    </div>
+
+    <div class="input-box">
+        <label for="">Descrição:</label>
+        <input type="text" formControlName="descricao" placeholder="Insira a descrição do produto!" required>
+    </div>
+
+    <div class="input-box">
+        <label for="">Link:</label>
+        <input type="text" formControlName="link" placeholder="Insira o link do produto!" required>
+    </div>
+
+    <div class="input-box">
+        <label for="">URL da imagem:</label>
+        <input type="text" formControlName="urlImagem" placeholder="Insira o URL da imagem do produto!" required>
+    </div>
+
+    <div class="input-box">
+        <label for="">Quantidade:</label>
+        <input type="number" formControlName="quantidade" placeholder="Insira a quantidade do produto no estoque!" required>
+    </div>
+
+    <div class="input-box">
+        <label for="">Preço:</label>
+        <input type="number" formControlName="preco" placeholder="Insira o preço do produto!" required>
+    </div>
+
+    <div class="input-box">
+        <label for="">Categoria:</label>
+        <select id="categoria" formControlName="categoria" required>
+            <option value="Tecnologia">Tecnologia</option>
+            <option value="Cozinha">Cozinha</option>
+            <option value="Banheiro">Banheiro</option>
+            <option value="Carro">Carro</option>
+            <option value="Beleza">Beleza</option>
+        </select>
+    </div>
+
+    <div class="btn-box">
+        <button class="btn-input" type="submit" [disabled]="!produtoForm.valid">{{btnAcao}}</button>
+        <button routerLink="/home">Voltar</button>
+    </div>
+
+</form>

@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .logo img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .categorias a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  
+  .categorias a:hover {
+    border-bottom: 2px solid white;
+  }
+  
+.card-principal {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+.card-imagem{
+  display: flex;
+  justify-content: center;
+}
+
+  .card-imagem img {
+    width: 50%;
+    border-radius: 4px;
+  }
+  
+  .card-info {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .card-info h1 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+  
+  .card-info h2 {
+    font-size: 1em;
+    color: #888;
+  }
+  
+  .card-comprar {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .card-comprar button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .card-comprar button:hover {
+    background-color: #45a049;
+  }
+  
+  .produtos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  

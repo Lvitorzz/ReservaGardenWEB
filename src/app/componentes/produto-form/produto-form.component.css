@@ -1,0 +1,46 @@
+h1{
+    text-align: center;
+    padding: 15px;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .input-box {
+    margin-bottom: 15px;
+  }
+  
+  .input-box label {
+    display: block;
+    margin-bottom: 0px;
+  }
+  
+  .input-box input,
+  .input-box select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .btn-box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .btn-input {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-input:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+  }
+  

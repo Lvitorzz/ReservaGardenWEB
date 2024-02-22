@@ -1,0 +1,112 @@
+ 
+  .produto-box {
+    display: flex;
+  }
+
+  .box-logout {
+    text-align: right;
+    margin: 10px;
+    margin-left: auto;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+}
+
+.box-logout:hover{
+  background-color: #3b3b3b;
+}
+
+.btn-logout {
+    padding: 10px 15px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-logout:hover {
+    background-color: #c34132;
+}
+
+
+  .produto-box .box-cadastrar{
+    
+  }
+  
+  .produto-box .btn-cadastrar {
+    margin-top: 25px;
+    margin-left: 25px;
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .input-box {
+    margin-top: 15px;
+    margin-left: 25px;
+    width: 50%;
+  }
+  
+  .input-box label {
+    display: block;
+  }
+  
+  .input-box input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  .tabela{
+    padding: 25px;
+  }
+  
+  .table-produtos {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table-produtos th,
+  .table-produtos td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+  }
+
+  .td-link{
+    max-width: 700px;
+  }
+  
+  .table-produtos th {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  .table-produtos img {
+    height: 20px;
+    width: 20px;
+  }
+  
+  .table-produtos button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+
+  .table-produtos .excluir {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+  }

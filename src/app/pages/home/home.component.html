@@ -1,0 +1,56 @@
+<div class="produto-box">
+    <div class="box-cadastrar">
+       <button class="btn-cadastrar" routerLink="/cadastro">Cadastrar novo produto</button> 
+    </div>
+    <div class="box-logout">
+       <button mat-button [matMenuTriggerFor]="menu">Gerenciar sua conta</button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/">Alterar sua senha</button>
+            <button mat-menu-item (click)="Logout()">Sair da sua conta</button>
+        </mat-menu> 
+    </div>
+    
+</div>
+<div class="input-box">
+    <label for="">Procurar</label>
+    <input type="text" placeholder="Qual produto está procurando?" (input)="serach($event)">
+</div>
+<div class="tabela">
+    <table class="table-produtos">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Nome</th>
+                <th>Quantidade</th>
+                <th>Link</th>
+                <th>Preço</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let produto of produtos">
+            <tr>
+                <td>
+                    <div *ngIf="produto.ativo == true; else inativo">
+                        <img src="assets/images/Ativo.png" alt="" style="height: 20px; width: 20px;">
+                    </div>
+                    <ng-template #inativo>
+                        <img src="assets/images/Inativo.png" alt="" style="height: 20px; width: 20px;">
+                    </ng-template>
+    
+                </td>
+                <td>{{produto.nome}}</td>
+                <td>{{produto.quantidade}}</td>
+                <td class="td-link">{{produto.link}}</td>
+                <td>{{ produto.preco | currency:'BRL':'symbol':'1.2-2' }}</td>
+                <td>
+                    <button routerLink="/editar/{{produto.id}}">Editar</button>
+                    <button routerLink="/detalhes/{{produto.id}}">Detalhes</button>
+                </td>
+                <td>
+                    <button class="excluir">Excluir</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
