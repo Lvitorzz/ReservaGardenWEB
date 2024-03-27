@@ -1,3 +1,4 @@
+<app-nav></app-nav>
 <header>
     <h1>Reserve Garden</h1>
     <h2>Promoções do dia: {{dataAtual | date:'dd/MM/yyyy'}}</h2>
@@ -18,3 +19,20 @@
     </div>
   </div>
 </section>
+
+<div class="container">
+  <div class="card p-3" style="width: 18rem;" *ngFor="let morador of moradores">
+    <div class="card-body">
+      <h1 class="card-title">{{morador.nomeMorador}}</h1>
+      <h2 class="card-subtitle mb-2 text-body-secondary">{{morador.numeroApartamento}}</h2>
+      
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let produtoMorador of produtosMorador | filterByMorador: morador.id">
+          {{ produtoMorador.nomeProduto }}
+        </li>
+      </ul>
+      
+      <a href="#" class="card-link">Ver produtos</a>
+    </div>
+  </div>
+</div>
