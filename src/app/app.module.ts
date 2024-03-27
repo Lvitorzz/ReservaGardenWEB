@@ -14,11 +14,14 @@ import { EditarComponent } from './pages/editar/editar.component';
 import { DetalhesComponent } from './pages/detalhes/detalhes.component';
 import { CatalogoComponent } from './pages/catalogo/catalogo.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 
 /*Angular Material*/
 import { MatButtonModule } from '@angular/material/button';
 import { LoginComponent } from './pages/login/login.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { NavComponent } from './componentes/nav/nav.component';
+import { FilterByMoradorPipe } from './pages/catalogo/filter-by-morador.pipe';
 
 @NgModule({
     declarations: [
@@ -29,7 +32,9 @@ import { MatMenuModule } from '@angular/material/menu';
         EditarComponent,
         DetalhesComponent,
         CatalogoComponent,
-        LoginComponent
+        LoginComponent,
+        NavComponent,
+        FilterByMoradorPipe
     ],
     imports: [
         BrowserModule,
@@ -38,6 +43,7 @@ import { MatMenuModule } from '@angular/material/menu';
         ReactiveFormsModule,
         FormsModule,
         BrowserAnimationsModule,
+        CollapseModule.forRoot(),
         MatButtonModule,
         MatMenuModule
     ],
