@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { ProdutoService } from '../../services/produto.service';
 import { Produto } from '../../models/Produtos';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-home',
@@ -10,11 +11,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  modalRef?: BsModalRef;
   produtos: Produto[] = [];
   produtosGeral: Produto[] = [];
 
-  constructor(private produtoService: ProdutoService, private authService : AuthService, private router: Router){}
+  constructor(private modalService: BsModalService, private produtoService: ProdutoService, private authService : AuthService, private router: Router){}
 
   ngOnInit(): void { 
     this.produtoService.GetProdutos().subscribe(data => {
@@ -40,7 +41,11 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  Logout(){
+  openModal(template: TemplateRef<void>) {
+    this.modalRef = this.modalService.show(template);
+  }
+
+  logout(){
     this.authService.logout();
     this.router.navigate(['']);
   }

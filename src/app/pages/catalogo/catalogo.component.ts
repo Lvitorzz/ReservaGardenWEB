@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Produto } from '../../models/Produtos';
 import { ProdutoService } from '../../services/produto.service';
 import { Morador } from 'src/app/models/Morador';
 import { MoradorService } from 'src/app/services/morador.service';
 import { MoradorProdutoService } from 'src/app/services/morador-produto.service';
 import { MoradorProduto } from 'src/app/models/moradorProduto';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 
 @Component({
@@ -13,12 +14,13 @@ import { MoradorProduto } from 'src/app/models/moradorProduto';
   styleUrls: ['./catalogo.component.css']
 })
 export class CatalogoComponent implements OnInit{
+  modalRef?: BsModalRef;
   produtos: Produto[] = [];
   moradores: Morador[] = [];
   produtosMorador: MoradorProduto[] = [];
   dataAtual: Date = new Date();
 
-  constructor(private produtoService : ProdutoService, private moradorService : MoradorService, private moradorProdutoService : MoradorProdutoService) { }
+  constructor(private modalService: BsModalService, private produtoService : ProdutoService, private moradorService : MoradorService, private moradorProdutoService : MoradorProdutoService) { }
 
 
   ngOnInit(): void {
@@ -62,5 +64,9 @@ export class CatalogoComponent implements OnInit{
         };
       });console.log(this.produtosMorador);
     });
+  }
+
+  openModal(template: TemplateRef<void>) {
+    this.modalRef = this.modalService.show(template);
   }
 }

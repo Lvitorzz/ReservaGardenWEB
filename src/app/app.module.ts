@@ -15,13 +15,13 @@ import { DetalhesComponent } from './pages/detalhes/detalhes.component';
 import { CatalogoComponent } from './pages/catalogo/catalogo.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
-
-/*Angular Material*/
 import { MatButtonModule } from '@angular/material/button';
 import { LoginComponent } from './pages/login/login.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { NavComponent } from './componentes/nav/nav.component';
 import { FilterByMoradorPipe } from './pages/catalogo/filter-by-morador.pipe';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
     declarations: [
@@ -43,9 +43,11 @@ import { FilterByMoradorPipe } from './pages/catalogo/filter-by-morador.pipe';
         ReactiveFormsModule,
         FormsModule,
         BrowserAnimationsModule,
+        BsDropdownModule.forRoot(),
         CollapseModule.forRoot(),
+        ModalModule.forRoot(),
         MatButtonModule,
-        MatMenuModule
+        MatMenuModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
